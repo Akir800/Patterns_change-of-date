@@ -67,10 +67,10 @@ class DeliveryTest {
         $("[data-test-id='success-notification'] .notification__content").shouldBe(visible, Duration.ofSeconds(15))
                 .shouldHave(exactText("Встреча успешно запланирована на " + firstMeetingDate));
         $(".grid-col button").click();
-        $("[data-test-id='replan-notification'] .button").click();
         $("[data-test-id='date'] .input__control").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME, Keys.BACK_SPACE));
         $("[data-test-id='date'] .input__control").setValue(secondMeetingDate);
         $(".grid-col .button").click();
+        $("[data-test-id='replan-notification'] .button").click();
         $("[data-test-id='success-notification'] .notification__content").shouldBe(visible, Duration.ofSeconds(15))
                 .shouldHave(exactText("Встреча успешно запланирована на " + secondMeetingDate));
     }
